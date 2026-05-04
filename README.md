@@ -52,7 +52,7 @@ Any push to the `main` branch on GitHub automatically triggers a new deployment 
 ## 👨‍💻 Developer
 
 **Jesse Adejoh**  
-Freelance IT Consultant & Web Developer
+Freelance IT Consultant 
 
 This project was developed as part of freelance IT consultancy work, providing end-to-end web development and deployment services for small UK businesses.
 
