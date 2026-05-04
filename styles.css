@@ -1,0 +1,465 @@
+:root {
+    --primary-blue: #0a2540;
+    --secondary-blue: #163057;
+    --accent-blue: #2563eb;
+    --accent-light: #3b82f6;
+    --light-blue: #f8fafc;
+    --white: #ffffff;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.7;
+    background-color: var(--light-blue);
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    overflow: hidden;
+}
+
+.galaxy-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at center, transparent 0%, rgba(10, 37, 64, 0.8) 100%);
+}
+
+/* Stars Animation */
+.stars, .stars2, .stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stars {
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s infinite;
+    opacity: 0.5;
+}
+
+.stars2 {
+    background-image: 
+        radial-gradient(1.5px 1.5px at 10px 50px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 60px 100px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 110px 20px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 160px 120px, #ddd, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    animation: twinkle 6s infinite 1s;
+    opacity: 0.6;
+}
+
+.stars3 {
+    background-image: 
+        radial-gradient(2.5px 2.5px at 30px 60px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 80px 150px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 140px 90px, #eee, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    animation: twinkle 8s infinite 2s;
+    opacity: 0.7;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
+    100% { opacity: 0.3; transform: scale(1); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.sub-phrase {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+}
+
+.business-name {
+    font-size: 5.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+.sparkle-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.sparkle-icon {
+    position: absolute;
+    top: -10px;
+    right: -40px;
+    color: #fbbf24;
+    font-size: 2rem;
+    animation: sparkleAnim 2.5s infinite ease-in-out;
+}
+
+@keyframes sparkleAnim {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.15) rotate(15deg); opacity: 1; text-shadow: 0 0 20px rgba(251, 191, 36, 0.6); }
+}
+
+.tagline {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 3.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.5px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--accent-blue);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+    background-color: var(--accent-light);
+}
+
+/* Sections Common */
+section {
+    padding: 7rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 4rem;
+    position: relative;
+    padding-bottom: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background-color: var(--accent-blue);
+    border-radius: 4px;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 10px 40px rgba(10, 37, 64, 0.04);
+    border: 1px solid rgba(241, 245, 249, 1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(10, 37, 64, 0.08);
+    border-color: rgba(226, 232, 240, 1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 1.8rem;
+    opacity: 0.9;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.5px;
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+    background-color: var(--light-blue);
+}
+
+.pricing-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 4rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(10, 37, 64, 0.06);
+    border: 1px solid rgba(241, 245, 249, 1);
+}
+
+.price-highlight {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.starting-at {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: -2px;
+}
+
+.pricing-note {
+    font-size: 1.15rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.pricing-note i {
+    color: var(--accent-blue);
+    font-size: 1.1rem;
+}
+
+/* Features Section */
+.features-section {
+    background-color: var(--white);
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: var(--light-blue);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 10px 30px rgba(10, 37, 64, 0.08);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.contact-section .section-title {
+    color: var(--white);
+}
+
+.contact-section .section-title::after {
+    background-color: var(--accent-blue);
+}
+
+.contact-card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-note {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+}
+
+.contact-link.phone {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-link.phone:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    transform: translateY(-4px);
+}
+
+.contact-link.whatsapp {
+    background-color: #25D366;
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+}
+
+.contact-link.whatsapp:hover {
+    background-color: #1ebd57;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: #051626;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 2.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .business-name {
+        font-size: 4rem;
+    }
+    
+    .tagline {
+        font-size: 1.3rem;
+    }
+    
+    .sub-phrase {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    section {
+        padding: 5rem 0;
+    }
+
+    .contact-methods {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .price {
+        font-size: 4rem;
+    }
+
+    .pricing-content {
+        padding: 2.5rem;
+    }
+}
