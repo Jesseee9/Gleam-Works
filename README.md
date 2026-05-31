@@ -45,7 +45,6 @@ The site is hosted live on **Netlify**, deployed automatically via GitHub integr
 
 🌐 **Live URL:** [gleamworks.netlify.app](https://gleamworks.netlify.app)
 
-Any push to the `main` branch on GitHub automatically triggers a new deployment on Netlify.
 
 ---
 
